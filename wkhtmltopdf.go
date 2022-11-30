@@ -285,7 +285,7 @@ func (pdfg *PDFGenerator) findPath() error {
 	}
 	path, err = lookPath(filepath.Join(dir, exe))
 	if errors.Is(err, exec.ErrDot) {
-		return err
+		return nil
 	}
 	if err == nil && path != "" {
 		binPath.Set(path)
